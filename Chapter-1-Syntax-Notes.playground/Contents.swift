@@ -171,3 +171,34 @@ for case let name? in celebrities where name.count == 13 {
     print(name)
 }
 
+
+
+// SECTION 2: - NIL COALESCING
+
+
+
+// Example of using nil coalescing if there is a chance of something returning nil
+
+let savedText = (try? String(contentsOfFile: "saved.txt")) ?? "Hello, world!"
+print(savedText)
+
+
+
+// SECTION 3: - GUARD
+
+
+
+// Usage of guard statement in for loop
+//
+
+for i in 1...100 {
+    guard i % 8 == 0 else { continue }
+    
+    print(i)
+}
+
+// Completes same thing as above block, but using where in combination with for loop
+for i in 1...100 where i % 8 == 0 {
+    print(i)
+}
+
