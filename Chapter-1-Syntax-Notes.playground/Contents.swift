@@ -202,3 +202,46 @@ for i in 1...100 where i % 8 == 0 {
     print(i)
 }
 
+
+
+// SECTION 4: - LAZY LOADING
+
+
+
+// Lazy Properties/Sequences (An introduction/review of the lazy keyword in swift
+//
+
+
+print("\n")
+func fibonacci(of n: Int) -> Int {
+    if n < 2 {
+        return n
+    } else {
+        return fibonacci(of: n - 1) + fibonacci(of: n - 2)
+    }
+}
+
+let fibonacciSequence = (0...20).map(fibonacci)
+print(fibonacciSequence[10])
+
+let lazyFibonacciSequence = Array(0...199).lazy.map(fibonacci)
+print(lazyFibonacciSequence[19])
+
+
+
+// SECTION 5: - DESTRUCTURING
+
+
+
+// Example of destructuring with a tuple
+//
+
+let data1 = ("one", "two", "three")
+
+// let one = data1.0
+// let two = data1.1
+// let three = data.2
+
+let (one, two, three) = data1
+print(one, two, three)
+
